@@ -1,0 +1,11 @@
+Name: {{ name }}
+Email: {{ email }}
+Package: {{ package }}
+
+Your needs:
+{{ needs }}
+
+Special requests:
+{{ special_requests|default:"Left empty" }}
+
+How did you find me? {{ how_found|default:"Left empty" }}

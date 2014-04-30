@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+    <div class="row">
+        <div class="span4 header">
+            <h2 class="upper"><span class="highlight">Projects</span> Designed</h2>
+        </div>
+        <div class="span8">
+            <img src="{{ STATIC_URL }}img/projects_banner.png" class="banner">
+        </div>
+    </div>
+    <div class="row" id="content">
+        <div class="span3" id="project-list">
+            {% for project in projects %}
+                <div class="project">
+                    <a href="#" data-project="#{{ project.slug }}">
+                        <img src="{{ project.sidebar_image.url }}">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="offset1 span8" id="project-content">
+            {% for project in projects %}
+                <div id="{{ project.slug }}" class="project-tab"{% if not forloop.first %} style="display: none"{% endif %}>
+                    <div class="banner">
+                        <img src="{{ project.large_image.url }}">
+                    </div>
+                    <div class="content">
+                        {{ project.content_html|safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+{{ block.super }}
+<script type="text/javascript">
+    $("#project-list > .project > a").click(function() {
+        var $this = $(this);
+        var id = $this.attr("data-project");
+        var selected = $(id);
+        $("#project-content > .project-tab").not(selected).hide();
+        selected.show();
+    });
+</script>
+{% endblock %}

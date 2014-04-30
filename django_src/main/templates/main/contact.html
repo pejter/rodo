@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="span4 header">
+        <h2 class="upper"><span class="highlight">Contact</span> Me</h2>
+    </div>
+    <div class="span8">
+    </div>
+</div>
+<div class="row" id="content">
+    <div class="span3">
+        <form method="POST" action="">
+            <fieldset>
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="btn" value="Send">
+            </fieldset>
+        </form>
+    </div>
+    <div class="offset1 span8">
+        <img src="{{ STATIC_URL }}img/contact_banner.png" class="banner">
+    </div>
+</div>
+{% endblock %}
