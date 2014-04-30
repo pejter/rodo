@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="span4 header">
+		<h2 class="upper"><span class="highlight">Contact</span> Me</h2>
+	</div>
+	<div class="span8">
+	</div>
+</div>
+<div class="row" id="content">
+	<div class="span3">
+		<form method="POST" action>
+			<fieldset>
+				<label for="name">Your name:</label><input type="text" name="name">
+				<label for="email">Your email:</label><input type="text" name="email" >
+				<label for="needs">Your needs:</label><textarea rows="3" cols="40" name="needs"></textarea>
+				<label for="package">Which package are you interested in?</label><select name="package">
+					<option value="Starter">Starter</option>
+					<option value="Streamer">Streamer</option>
+					<option value="YouTuber">YouTuber</option>
+					<option value="All Rounder">All Rounder</option>
+				</select>
+				<label for="special_requests">Any special requests?</label><textarea rows="3" cols="40" name="special_requests"></textarea>
+				<label for="how_found">How did you find me?</label><input type="text" name="how_found">
+				<input type="submit" class="btn" value="Send">
+			</fieldset>
+		</form>
+	</div>
+	<div class="offset1 span8">
+		<img src="/static/img/contact_banner.png" class="banner">
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+	<div class="row">
+		<h1>Projects</h1>
+		<ul class="span8" id="projects-list">
+		{% for project in projects %}
+		  	<li class="project-item"><a href="{{ urlFor('project-edit', { id: project.id }) }}">{{ project.name }}</a></li>
+		{% endfor %}
+		</ul>
+		<a class="btn" href="{{ urlFor('project-add') }}">Add project</a>
+	</div>
+{% endblock %}

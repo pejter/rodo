@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'aaux_officebold';
+    src: url('aauxoffice-bold-webfont.eot');
+    src: url('aauxoffice-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aauxoffice-bold-webfont.woff') format('woff'),
+         url('aauxoffice-bold-webfont.ttf') format('truetype'),
+         url('aauxoffice-bold-webfont.svg#aaux_officeboldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aaux_officeregular';
+    src: url('aauxoffice-regular-webfont.eot');
+    src: url('aauxoffice-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aauxoffice-regular-webfont.woff') format('woff'),
+         url('aauxoffice-regular-webfont.ttf') format('truetype'),
+         url('aauxoffice-regular-webfont.svg#aaux_officeregularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aaux_officemedium';
+    src: url('aauxoffice-medium-webfont.eot');
+    src: url('aauxoffice-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aauxoffice-medium-webfont.woff') format('woff'),
+         url('aauxoffice-medium-webfont.ttf') format('truetype'),
+         url('aauxoffice-medium-webfont.svg#aaux_officemediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	background-image: url(../img/bg_pattern.png);
+	font-family: 'aaux_officemedium';
+	font-size: 20px;
+}
+
+html, body {
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'aaux_officebold';
+}
+
+li {
+	line-height: 25px;
+}
+
+ul.asterisks, ul.plusses {
+	margin-left: 0;
+	padding-left: 0;
+}
+ul.asterisks > li, ul.plusses > li {
+	list-style-type: none;
+	list-style-position: inside;
+}
+
+.highlight small {
+	color: white;
+	display: block;
+}
+
+ul.asterisks > li:before {
+	content: "*  ";
+}
+
+ul.plusses > li:before {
+	content: "+  ";
+	color: white;
+}
+
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -41px;
+}
+
+#push {
+	height: 40px;
+}
+
+#footer {
+	background-color: #b40f0f;
+	border-top: 1px solid #ff1e1e;
+	height: 40px;
+	font-size: 30px;
+	line-height: 40px;
+	font-family: 'aaux_officeregular';
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#footer p {
+	margin: 0;
+}
+
+#wrap > .navbar > .navbar-inner {
+	background: #b70f0f;
+	border-bottom: 2px solid #d31515;
+}
+
+#wrap > .navbar > .navbar-inner a {
+	color: white;
+	text-transform: uppercase;
+	font-family: 'aaux_officemedium';
+	font-size: 40px;
+	height: 74px;
+	line-height: 74px;
+	margin: 0;
+	margin-left: 20px;
+	padding: 0;
+}
+
+#wrap > .container {
+	padding-top: 110px;
+}
+
+.header {
+	border-bottom: 1px solid red;
+}
+
+#splash-screen {
+	text-align: center;
+}
+
+.highlight {
+	color: #b70f0f;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+
+#content {
+	margin-top: 20px;
+}
+
+.welcome-text {
+	font-family: 'aaux_officemedium';
+}
+
+#project-list .project {
+    text-align: center;
+}
+
+.project-tab .banner {
+    text-align: center;
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.errorlist li {
+    font-size: 15px;
+    color: #b70f0f;
+}

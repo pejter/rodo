@@ -1,0 +1,59 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<form action method="POST" enctype="multipart/form-data" class="form-horizontal span12">
+	<input type="hidden" value="{{ project.id }}" name="id">
+	<input type="hidden" value="{{ project.slug }}" name="slug">
+
+	<div class="control-group">
+		<label class="control-label" for="name">Name: </label>
+		<div class="controls">
+			<input type="text" name="name" value="{{ project.name }}" required>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label" for="name">Order: </label>
+		<div class="controls">
+			<input type="number" name="order" value="{{ project.order }}" required>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label" for="name">Content: </label>
+		<div class="controls">
+			<textarea name="content_html" rows="15" cols="100" required>{{ project.content_html }}</textarea>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label" for="name">Sidebar image: </label>
+		<div class="controls">
+			<input type="file" name="sidebar_image">
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label" for="name">Large image: </label>
+		<div class="controls">
+			<input type="file" name="large_image">
+		</div>
+	</div>
+
+	<div class="control-group">
+		<div class="controls">
+			<button type="submit" class="btn">Submit</button>
+		</div>
+	</div>
+</form>
+<a href="{{ urlFor('admin-index') }}" class="btn pull-right">Go back</a>
+{% endblock %}
+
+{% block script %}
+{{ parent() }}
+<script type="text/javascript">
+	$('input[name=name]').change(function(){
+		$('input[name=slug]').attr('value',$('input[name=name]').val().toLowerCase());
+	})
+</script>
+{% endblock %}
