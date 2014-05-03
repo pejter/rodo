@@ -160,7 +160,7 @@ ul.plusses > li:before {
 	background-color: #800000;
 	font-size: 38px;
 	padding: 20px;
-	padding-left: 0;
+	padding-left: 2px;
 	color: white;
 	white-space: nowrap;
 }

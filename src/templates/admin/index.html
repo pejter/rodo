@@ -5,9 +5,13 @@
 		<h1>Projects</h1>
 		<ul class="col-md-8 " id="projects-list">
 		{% for project in projects %}
-		  	<li class="project-item"><a href="{{ urlFor('project-edit', { id: project.id }) }}">{{ project.name }}</a></li>
+			<li class="project-item">
+				<a href="{{ urlFor('project-edit', { id: project.id }) }}">{{ project.name }}</a>
+				<a class="pull-right" href="{{ urlFor('project-delete', {id: project.id}) }}">delete</a>
+			</li>
 		{% endfor %}
 		</ul>
+		<div class="clearfix"></div>
 		<a class="btn btn-default" href="{{ urlFor('project-add') }}">Add project</a>
 	</div>
 {% endblock %}

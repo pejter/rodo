@@ -3,3 +3,4 @@ vagrant/.vagrant/
 src/templates/cache/
 src/composer.lock
 src/composer.phar
+*.sublime-*

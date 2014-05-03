@@ -22,6 +22,7 @@ $app->add(new \Slim\Middleware\HttpBasicAuth(array(
 	"realm" => "Admin Panel",
 	"users" => array(
 		"pejter" => "814ff90c56a74b5e2bb48cd240331867a95357e1",
+		"rodo" => "c68e87bb04b581b3c958ae4a15f2587e738548be"
 	)
 )));
 $view = $app->view();
@@ -44,7 +45,10 @@ function projectSubmit(){
 	$app = \Slim\Slim::getInstance();
 	$post = $app->request->post();
 	$mode = NULL;
-	$old_data = NULL;
+
+
+	$oq = $app->db->query("SELECT sidebar_image,large_image FROM main_project WHERE id=".intval($id).";");
+	$old_data = $oq->fetch(PDO::FETCH_ASSOC);
 	//construct update/insert query
 	if($id == 0){
 		$q = $app->db->prepare(
@@ -58,8 +62,6 @@ function projectSubmit(){
 			array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY)
 		);
 		$mode = 'update';
-		$oq = $app->db->query("SELECT sidebar_image,large_image FROM main_project WHERE id=".intval($id).";");
-		$old_data = $oq->fetch(PDO::FETCH_ASSOC);
 	}
 
 
@@ -78,6 +80,7 @@ function projectSubmit(){
 			if(!move_uploaded_file($tmp_name,$name)){
 				throw new Exception("Cannot move file '$tmp_name' to permanent location");
 			}
+			unlink($old_data['sidebar_image']);
 			$update->bindValue(':sidebar_image', $_FILES['sidebar_image']['name'], PDO::PARAM_STR);
 			break;
 		case UPLOAD_ERR_NO_FILE:
@@ -102,6 +105,7 @@ function projectSubmit(){
 			if(!move_uploaded_file($tmp_name,$name)){
 				throw new Exception("Cannot move file '$tmp_name' to permanent location");
 			}
+			unlink($old_data['sidebar_image']);
 			$update->bindValue(':large_image', $_FILES['large_image']['name'], PDO::PARAM_STR);
 			break;
 		case UPLOAD_ERR_NO_FILE:
@@ -195,6 +199,18 @@ $app->group('/admin', function() use ($app){
 		));
 	})->name('project-add');
 
+	$app->get('/project/:id/delete', function($id) use ($app){
+		$q = $app->db->query("SELECT * FROM main_project WHERE id='$id';");
+		$project = $q->fetch(PDO::FETCH_ASSOC);
+		$app->render('admin/project-delete.html', array(
+			'project' => $project
+		));
+	})->name('project-delete');
+
+	$app->post('/project/:id/delete', function($id) use ($app){
+		$r = $app->db->query("DELETE FROM main_project WHERE id='$id';");
+	});
+
 	$app->post('/project/add', projectSubmit());
 
 	$app->get('/project/:id', function($id) use ($app){
@@ -206,6 +222,7 @@ $app->group('/admin', function() use ($app){
 	})->name('project-edit');
 
 	$app->post('/project/:id', projectSubmit($id));
+
 });
 
 $app->notFound(function() use ($app){

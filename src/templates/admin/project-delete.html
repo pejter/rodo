@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="alert alert-danger">Do you really want to delete project {{ project.name }}?</div>
+<form method="POST" action>
+	<div class="form-group">
+		<div class="controls">
+			<button type="submit" class="btn btn-danger">Delete</button>
+			<a class="btn btn-default" href="{{ urlFor('admin-index') }}">No, take me back</a>
+		</div>
+	</div>
+</form>
+{% endblock %}
