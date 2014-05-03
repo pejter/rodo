@@ -1,33 +1,54 @@
 {% extends "base.html" %}
 
+{% block css %}
+{{ parent() }}
+<style>
+    body {
+        background-image: url(../static/img/bg_contact.png);
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="row">
-	<div class="span4 header">
+	<div class="col-xs-4 header">
 		<h2 class="upper"><span class="highlight">Contact</span> Me</h2>
 	</div>
-	<div class="span8">
+	<div class="col-xs-8">
 	</div>
 </div>
 <div class="row" id="content">
-	<div class="span3">
+	<div class="col-xs-3">
 		<form method="POST" action>
 			<fieldset>
-				<label for="name">Your name:</label><input type="text" name="name">
-				<label for="email">Your email:</label><input type="text" name="email" >
-				<label for="needs">Your needs:</label><textarea rows="3" cols="40" name="needs"></textarea>
-				<label for="package">Which package are you interested in?</label><select name="package">
+				<div class="form-group">
+					<label for="name">Your name:</label><input class="form-control" type="text" name="name" id="name">
+				</div>
+				<div class="form-group">
+					<label for="email">Your email:</label><input class="form-control" type="text" id="email" name="email" >
+				</div>
+				<div class="form-group">
+					<label for="needs">Your needs:</label><textarea class="form-control" rows="3" cols="40" id="needs" name="needs"></textarea>
+				</div>
+				<div class="form-group"><label for="package">Which package are you interested in?</label><select class="form-control" id="package" name="package">
 					<option value="Starter">Starter</option>
 					<option value="Streamer">Streamer</option>
 					<option value="YouTuber">YouTuber</option>
 					<option value="All Rounder">All Rounder</option>
-				</select>
-				<label for="special_requests">Any special requests?</label><textarea rows="3" cols="40" name="special_requests"></textarea>
-				<label for="how_found">How did you find me?</label><input type="text" name="how_found">
-				<input type="submit" class="btn" value="Send">
+				</select></div>
+				<div class="form-group">
+					<label for="special_requests">Any special requests?</label><textarea class="form-control" rows="3" cols="40" id="special_requests" name="special_requests"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="how_found">How did you find me?</label><input class="form-control" type="text" id="how_found" name="how_found">
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-default" value="Send">
+				</div>
 			</fieldset>
 		</form>
 	</div>
-	<div class="offset1 span8">
+	<div class="col-md-offset-1 col-xs-8">
 		<img src="/static/img/contact_banner.png" class="banner">
 	</div>
 </div>

@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 
+{% block css %}
+{{ parent() }}
+<style>
+    body {
+        background-image: url(../static/img/bg_projects.png);
+    }
+</style>
+{% endblock %}
+
 {% block content %}
     <div class="row">
-        <div class="span4 header">
+        <div class="col-xs-4 header">
             <h2 class="upper"><span class="highlight">Projects</span> Designed</h2>
         </div>
-        <div class="span8">
+        <div class="col-xs-8">
             <img src="/static/img/projects_banner.png" class="banner">
         </div>
     </div>
     <div class="row" id="content">
-        <div class="span3" id="project-list">
+        <div class="col-md-3" id="project-list">
             {% for project in projects %}
                 <div class="project">
                     <a href="#" data-project="#{{ project.slug }}">
@@ -19,7 +28,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="offset1 span8" id="project-content">
+        <div class="col-md-offset-1 col-xs-8" id="project-content">
             {% for project in projects %}
                 <div id="{{ project.slug }}" class="project-tab"{% if not forloop.first %} style="display: none"{% endif %}>
                     <div class="banner">

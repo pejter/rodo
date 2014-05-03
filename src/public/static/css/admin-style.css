@@ -1,16 +1,16 @@
 @import url('style.css');
 
-#projects-list{
+#projects-list {
     font-family: 'aaux_officebold';
     list-style: none;
     margin-left: 30px;
 }
 
-.project-item{
+.project-item {
     text-transform: uppercase;
 }
 
-.project-item > a{
+.project-item > a {
     color: white;
     font-size: 25px;
     height: 40px;
@@ -18,10 +18,10 @@
     text-decoration: none;
 }
 
-.project-item > a:hover{
+.project-item > a:hover {
     color: #b70f0f;
 }
 
-textarea{
+textarea {
     width: 80%;
 }

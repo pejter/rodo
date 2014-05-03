@@ -1,12 +1,24 @@
 {% extends "base.html" %}
 
+{% block css %}
+{{ parent() }}
+<style>
+    body {
+        background-image: url(../static/img/bg_welcome.png);
+    }
+</style>
+{% endblock %}
+
 {% block content %}
     <div class="row">
-        <div class="span12" id="splash-screen">
+        <div class="col-xs-12" id="splash-screen">
             <img src="/static/img/welcome_logo.png" class="welcome-logo">
             <h1 class="welcome-text">
-                Welcome to my website! Try the menu above <br/>
-                to find what you're looking for :)
+                <span>Welcome to my website!</span><br/>
+                <br/>
+				In here, gaming media is held on a high standard.<br/>
+				Weather you are a team or a producer, here you’ll find<br/>
+				the design solutions you’ll need
             </h1>
         </div>
     </div>

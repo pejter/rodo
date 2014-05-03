@@ -32,9 +32,19 @@
 }
 
 body {
-	background-image: url(../img/bg_pattern.png);
+	background-color: #474747; /* Old browsers */
+	background: -moz-linear-gradient(top,  #474747 0%, #272727 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#272727)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #474747 0%,#272727 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #474747 0%,#272727 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #474747 0%,#272727 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #474747 0%,#272727 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#272727',GradientType=0 ); /* IE6-9 */
 	font-family: 'aaux_officemedium';
 	font-size: 20px;
+	color: white;
+	background-position: bottom center;
+	background-repeat: no-repeat;
 }
 
 html, body {
@@ -79,40 +89,33 @@ ul.plusses > li:before {
 	margin: 0 auto -41px;
 }
 
-#push {
-	height: 40px;
+#wrap > .navbar {
+	background: #2d2d2d;
+	border-bottom-width: 0;
+	padding: 0 5%;
 }
 
-#footer {
-	background-color: #b40f0f;
-	border-top: 1px solid #ff1e1e;
-	height: 40px;
-	font-size: 30px;
-	line-height: 40px;
-	font-family: 'aaux_officeregular';
-	text-transform: uppercase;
-	text-align: center;
-}
-
-#footer p {
-	margin: 0;
-}
-
-#wrap > .navbar > .navbar-inner {
-	background: #b70f0f;
-	border-bottom: 2px solid #d31515;
-}
-
-#wrap > .navbar > .navbar-inner a {
+#wrap > .navbar a {
 	color: white;
 	text-transform: uppercase;
+	text-shadow: none;
 	font-family: 'aaux_officemedium';
-	font-size: 40px;
+	font-size: 32px;
 	height: 74px;
 	line-height: 74px;
-	margin: 0;
-	margin-left: 20px;
+	margin: 0 10px;
 	padding: 0;
+}
+
+.navbar .nav>.active, .navbar .nav>li:hover, .navbar .nav>li:focus {
+	background-color: #800000;
+}
+
+.navbar .nav>.active>a, .navbar .nav>li>a:hover, .navbar .nav>li>a:focus {
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 #wrap > .container {
@@ -120,15 +123,16 @@ ul.plusses > li:before {
 }
 
 .header {
-	border-bottom: 1px solid red;
+	border-bottom: 1px solid white;
 }
 
 #splash-screen {
 	text-align: center;
 }
 
+
 .highlight {
-	color: #b70f0f;
+	color: black;
 }
 
 .upper {
@@ -141,6 +145,29 @@ ul.plusses > li:before {
 
 .welcome-text {
 	font-family: 'aaux_officemedium';
+	color: white;
+}
+
+.welcome-text > span {
+	font-size: 58px;
+}
+
+.package {
+	padding: 0 5px;
+}
+
+.package h3 {
+	background-color: #800000;
+	font-size: 38px;
+	padding: 20px;
+	padding-left: 0;
+	color: white;
+	white-space: nowrap;
+}
+
+.package h4 {
+	color: black;
+	font-size: 28px;
 }
 
 #project-list .project {

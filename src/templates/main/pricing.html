@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 
+{% block css %}
+{{ parent() }}
+<style>
+    body {
+        background-image: url(../static/img/bg_pricing.png);
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="row">
-    <div class="span4 header">
+    <div class="col-xs-4 header">
         <h2 class="upper"><span class="highlight">Packages</span> for Games</h2>
     </div>
-    <div class="span8">
-        <img src="/static/img/pricing_banner.png" class="banner">
+    <div class="col-xs-8">
+        <img src="/static/img/pricing_banner.png" class="banner pull-right">
     </div>
 </div>
 <div class="row" id="content">
-    <div class="span3">
+    <div class="col-md-3 package">
         <h3>Starter <small>(60&euro; EUR / 65$ USD)*</small></h3>
         <h4>Features</h4>
         <ul class="features plusses highlight">
@@ -19,7 +28,7 @@
             <li>Manual</li>
         </ul>
     </div>
-    <div class="span3">
+    <div class="col-md-3 package">
         <h3>Streamer <small>(80&euro; EUR / 100$ USD)*</small></h3>
         <h4>Features</h4>
         <ul class="features plusses highlight">
@@ -32,7 +41,7 @@
             <li>Social media <small>(facebook + twitter)</small></li>
         </ul>
     </div>
-    <div class="span3">
+    <div class="col-md-3 package">
         <h3>YouTuber <small>(80&euro; EUR / 100$ USD)*</small></h3>
         <h4>Features</h4>
         <ul class="features plusses highlight">
@@ -45,7 +54,7 @@
             <li>Social media <small>(facebook + twitter)</small></li>
         </ul>
     </div>
-    <div class="span3">
+    <div class="col-md-3 package">
         <h3>All Rounder <small>(120&euro; EUR / 155$ USD)*</small></h3>
         <h4>Features</h4>
         <ul class="features plusses highlight">
@@ -59,10 +68,11 @@
             <li>Social media <small>(facebook + twitter)</small></li>
         </ul>
     </div>
-    <div class="span12">
+    <div class="col-md-12">
         <ul class="asterisks">
             <li>All packages have a 3-month support range.</li>
             <li>Packages valid for gamers only. For businesses/companies, contact me via email.</li>
+            <li>If you found what you were looking for go to the contact page and shoot me an email.</li>
         </ul>
     </div>
 </div>
