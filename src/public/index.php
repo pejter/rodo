@@ -80,7 +80,9 @@ function projectSubmit(){
 			if(!move_uploaded_file($tmp_name,$name)){
 				throw new Exception("Cannot move file '$tmp_name' to permanent location");
 			}
-			unlink($old_data['sidebar_image']);
+			if($old_data['sidebar_image'] != $name){
+				unlink($old_data['sidebar_image']);
+			}
 			$update->bindValue(':sidebar_image', $_FILES['sidebar_image']['name'], PDO::PARAM_STR);
 			break;
 		case UPLOAD_ERR_NO_FILE:
@@ -105,7 +107,9 @@ function projectSubmit(){
 			if(!move_uploaded_file($tmp_name,$name)){
 				throw new Exception("Cannot move file '$tmp_name' to permanent location");
 			}
-			unlink($old_data['sidebar_image']);
+			if($old_data['large_image'] != $name){
+				unlink($old_data['sidebar_image']);
+			}
 			$update->bindValue(':large_image', $_FILES['large_image']['name'], PDO::PARAM_STR);
 			break;
 		case UPLOAD_ERR_NO_FILE:
