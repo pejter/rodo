@@ -22,7 +22,7 @@ $app->add(new \Slim\Middleware\HttpBasicAuth(array(
 	"realm" => "Admin Panel",
 	"users" => array(
 		"pejter" => "814ff90c56a74b5e2bb48cd240331867a95357e1",
-		"rodo" => "c68e87bb04b581b3c958ae4a15f2587e738548be"
+		"rodo" => "2a4a70fa1f6954596ff7e60d49ada1f441c29cef"
 	)
 )));
 $view = $app->view();
@@ -38,7 +38,7 @@ $view->parserExtensions = array(
 	new \Slim\Views\TwigExtension(),
 );
 $app->db = new PDO('mysql:host='.$db_host.';dbname='.$db_name, $db_user, $db_pass);
-$app->owner_email = 'piotrluczak1995@gmail.com';
+$app->owner_email = 'joaorodo@gmail.com';
 
 function projectSubmit(){
 	return function($id){
@@ -74,7 +74,7 @@ function projectSubmit(){
 	// Check $_FILES['sidebar_image']['error'] value.
 	switch ($_FILES['sidebar_image']['error']) {
 		case UPLOAD_ERR_OK:
-			$uploadDir = '/projects/sidebar/';
+			$uploadDir = '/project/sidebar/';
 			$name = $uploadDir.$_FILES['sidebar_image']['name'];
 			$tmp_name = $_FILES['sidebar_image']['tmp_name'];
 			if(!move_uploaded_file($tmp_name,$name)){
@@ -101,7 +101,7 @@ function projectSubmit(){
 
 	switch ($_FILES['large_image']['error']) {
 		case UPLOAD_ERR_OK:
-			$uploadDir = '/projects/large/';
+			$uploadDir = '/project/large/';
 			$name = $uploadDir.$_FILES['large_image']['name'];
 			$tmp_name = $_FILES['large_image']['tmp_name'];
 			if(!move_uploaded_file($tmp_name,$name)){
