@@ -5,7 +5,7 @@ require '../middleware/HttpBasicAuth.php';
 use \Slim\Slim;
 $db_host = 'localhost';
 $db_name = 'rodo';
-$db_user = 'postgres';
+$db_user = 'root';
 $db_pass = 'pass';
 
 //application config
@@ -37,7 +37,7 @@ $view->parserOptions = array(
 $view->parserExtensions = array(
 	new \Slim\Views\TwigExtension(),
 );
-$app->db = new PDO('pgsql:host='.$db_host.';dbname='.$db_name, $db_user, $db_pass);
+$app->db = new PDO('mysql:host='.$db_host.';dbname='.$db_name, $db_user, $db_pass);
 $app->owner_email = 'piotrluczak1995@gmail.com';
 
 function projectSubmit(){
