@@ -178,6 +178,9 @@ ul.plusses > li:before {
 .project-tab .banner {
     text-align: center;
 }
+.project-tab .banner >img{
+	width: 100%;
+}
 
 .social-icons {
     text-align: center;

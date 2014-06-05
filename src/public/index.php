@@ -183,6 +183,7 @@ $app->post('/contact', function() use ($app){
 	$msg .= "\nHow did you find me? ".$post['how_found'];
 
 	mail($app->owner_email, 'Contact Request - '.$post['name'], $msg);
+	$app->getLog()->debug(Date(time())." [debug] Sent email to".$app->owner_email." with message:\n".$msg);
 	$app->render('main/contact_sent.html');
 });
 
@@ -234,5 +235,4 @@ $app->notFound(function() use ($app){
 });
 
 $app->run();
-//WORKTIME 1.5h
 ?>
