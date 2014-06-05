@@ -1,0 +1,41 @@
+@font-face{font-family:'aaux_officebold';src:url('aauxoffice-bold-webfont.eot');src:url('aauxoffice-bold-webfont.eot?#iefix') format('embedded-opentype'),
+url('aauxoffice-bold-webfont.woff') format('woff'),
+url('aauxoffice-bold-webfont.ttf') format('truetype'),
+url('aauxoffice-bold-webfont.svg#aaux_officeboldregular') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'aaux_officeregular';src:url('aauxoffice-regular-webfont.eot');src:url('aauxoffice-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('aauxoffice-regular-webfont.woff') format('woff'),
+url('aauxoffice-regular-webfont.ttf') format('truetype'),
+url('aauxoffice-regular-webfont.svg#aaux_officeregularregular') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'aaux_officemedium';src:url('aauxoffice-medium-webfont.eot');src:url('aauxoffice-medium-webfont.eot?#iefix') format('embedded-opentype'),
+url('aauxoffice-medium-webfont.woff') format('woff'),
+url('aauxoffice-medium-webfont.ttf') format('truetype'),
+url('aauxoffice-medium-webfont.svg#aaux_officemediumregular') format('svg');font-weight:normal;font-style:normal;}
+body{background-color:#272727;background:-moz-linear-gradient(top, #474747 0%, #272727 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#272727));background:-webkit-linear-gradient(top, #474747 0%,#272727 100%);background:-o-linear-gradient(top, #474747 0%,#272727 100%);background:-ms-linear-gradient(top, #474747 0%,#272727 100%);background:linear-gradient(to bottom, #474747 0%,#272727 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747', endColorstr='#272727',GradientType=0);background-attachment:fixed;font-family:'aaux_officemedium';font-size:20px;color:white;background-position:bottom center;background-repeat:no-repeat;}
+html, body{height:100%;}
+h1, h2, h3, h4, h5, h6{font-family:'aaux_officebold';}
+li{line-height:25px;}
+ul.asterisks, ul.plusses{margin-left:0;padding-left:0;}
+ul.asterisks > li, ul.plusses > li{list-style-type:none;list-style-position:inside;}
+.highlight small{color:white;display:block;}
+ul.asterisks > li:before{content:"*  ";}
+ul.plusses > li:before{content:"+  ";color:white;}
+#wrap{min-height:100%;height:auto !important;height:100%;margin:0 auto -41px;}
+#wrap > .navbar{background:#2d2d2d;border-bottom-width:0;padding:0 5%;}
+#wrap > .navbar a{color:white;text-transform:uppercase;text-shadow:none;font-family:'aaux_officemedium';font-size:32px;height:74px;line-height:74px;margin:0 10px;padding:0;}
+.navbar .nav>.active, .navbar .nav>li:hover, .navbar .nav>li:focus{background-color:#800000;}
+.navbar .nav>.active>a, .navbar .nav>li>a:hover, .navbar .nav>li>a:focus{background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+#wrap > .container{padding-top:110px;}
+#splash-screen{text-align:center;}
+.highlight{color:black;}
+.upper{text-transform:uppercase;}
+#content{margin-top:20px;}
+.welcome-text{font-family:'aaux_officemedium';color:white;}
+.welcome-text > span{font-size:58px;}
+.package{padding:0 5px;}
+.package h3{background-color:#800000;font-size:38px;padding:20px;padding-left:2px;color:white;white-space:nowrap;}
+.package h4{color:black;font-size:28px;}
+#project-list .project{text-align:center;}
+.project-tab .banner{text-align:center;}
+.project-tab .banner >img{max-width:100%;}
+.social-icons{text-align:center;margin-top:40px;}
+.errorlist li{font-size:15px;color:#b70f0f;}
